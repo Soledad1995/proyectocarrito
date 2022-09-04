@@ -31,6 +31,10 @@ const productos = {
       srcImg: 'https://expografika.com/n/wp-content/uploads/2020/05/merchandising.jpg'
     }
   }
+  const guardarLocal = (clave , valor) => ( localStorage.setItem(clave, valor) );
+
+  guardarLocal ("listaProductos", JSON.stringify(productos));
+
   // Se captura el template de los productos
   const templateProd = document.getElementById('template-prod').content
   const contenedorProd = document.querySelector('.contenedor-productos')
@@ -90,7 +94,7 @@ const productos = {
     })
     tbodyCarrito.innerHTML = ''
     tbodyCarrito.appendChild(fragmentTabla)
-    pintarFooter()
+    pintarFooter()        
   }
   const pintarFooter = () => {
     tfootCarrito.innerHTML = ''
